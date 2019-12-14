@@ -1,1 +1,2 @@
-# HashTableOnPython
+# this class implement a basic hash table that support add some key-value based data to its entry. we use a simple modulo operation to compute hash (table index) for each key, if  collision occur, we apply the double hashing strategy to find another available "slot" to store key. if elements within table reach some critical value, we expended it as needed.
+# I also plan to add some security feature future, to its add() method to prevent memory exhausting attack (e.g., the caller continuously add key in an infinite loop to force the table expand  exceed the heap memory limitation of a Python program. ) 
