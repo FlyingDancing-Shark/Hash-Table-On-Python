@@ -2,7 +2,7 @@
 description
 
 '''
-
+import sys
 from arrays import Array
 
 class _MapEntry:
@@ -76,6 +76,13 @@ class HashMap:
 		
 		# for the sake of decreasing 1st and 2nd clustering, this guarantee to be prime number.
 		newSize = len(self._table) * 2 + 1
+		
+		# we can insert some security check logic here to prevent memory exhaustion attack
+		# if memory allocated larger than 2097151 * 4byte, which is the usual heap memory limitation of a 32-bit Python program
+		if newSize >= sys.maxint / 1024
+			# print .......
+			# return False
+		
 		self._table = Array(newSize)
 		
 		# reset current entry number and re-computer the load factor 
