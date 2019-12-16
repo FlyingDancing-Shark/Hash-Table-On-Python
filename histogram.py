@@ -14,11 +14,28 @@ class Histogram:
 		# Histogram.frequenceCounts , is actually a hash table
 		self._frequenceCounts = HashMap()
 		
-		for category in catSeq:
+		for L_category in catSeq:
 			
 			# so it has a addkey() method, here "category" is single character-based key, "0" is value
-			# the letter with uppercase will be hash to integer-based key
-			# and a empty slot will be fill with new key-value(0) pair entry
+			# the letter-based key with uppercase will be hash to integer-based key
+			# and a empty slot will be fill with new entry, that is,
+			# key-value(0) pair 
 			# the value(0) represent the initialized counter=0 for each category
-			self._frequenceCounts.addkey(category, 0)
-			
+			self._frequenceCounts.addkey(L_category, 0)
+	
+	def getCount(self, category):
+		
+		# determine if key in hash table
+		assert category in self._frequenceCounts, "Invalid histogram category !"
+		return self._frequenceCounts._readValue(category)
+	
+	def increaseCount(self, category):
+		
+		# determine if key in hash table
+		assert category in self._frequenceCounts, "Invalid histogram category !"
+		value = self._frequenceCounts._readValue(category)
+		
+		# each time we achieve a data belongs to particular category, 
+		# add corresponding counter value by one
+		self._frequenceCounts.addkey(category, value + 1)
+		
