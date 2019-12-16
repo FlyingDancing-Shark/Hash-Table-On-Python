@@ -81,7 +81,7 @@ class HashMap:
 		# if memory allocated larger than 2097151 * 4byte, which is the usual heap memory limitation of a 32-bit Python program
 		if newSize >= sys.maxint / 1024
 			# print .......
-			# return False
+			return False
 		
 		self._table = Array(newSize)
 		
