@@ -3,6 +3,8 @@ description
 
 '''
 import sys
+
+# notice arrays is a third-party module, not built-in.
 from arrays import Array
 
 class _MapEntry:
