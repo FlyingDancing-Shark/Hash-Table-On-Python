@@ -25,6 +25,7 @@ class HashMap:
 	def __init__(self):
 		self._table = Array(7)
 		
+		# any variable initialized within this become global visible
 		# currently amount of key store in the table
 		self._count = 0
 		
@@ -108,8 +109,37 @@ class HashMap:
 		
 	
 	def _readValue(self, key):
-		slot = _FindSlot(key, False)
+		slot = self._FindSlot(key, False)
 		assert slot is not None, "Invalid key !"
 		return self._table[slot].value
 	
+	# determine if a given key contain in table, it can be used by addkey() method before it perform an insert operation
+	def __contains__(self, key):
+		slot = self._FindSlot(key, False)
+		return slot in not None
 	
+	def addkey(self, key, value):
+		
+		# if the key exists in table, this function assumes that the caller passed the updated value
+		# but there maybe situation where the caller don't want to change the value referenced by the given key.
+		# at latter case, we would not modify the key
+		if key in self:
+			slot = self._FindSlot(key, False)
+			if value != self._table[slot].value 
+				self._table[slot].value = value
+			
+			# indicates add action fail (given key already in table)
+			return False
+		else:
+			slot = self._FindSlot(key, True)
+			
+			# an all-new table entry store an all-new key-value pair
+			self._table[slot] = _MapEntry(key, value)
+			self._count += 1
+			if self._count == self._maxCount:
+				self._rehash()
+			
+			# indicates add action successful
+			return True
+	
+####################### end of class HashMap definition ##########################
