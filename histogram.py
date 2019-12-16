@@ -35,6 +35,7 @@ class Histogram:
 		assert category in self._frequenceCounts, "Invalid histogram category !"
 		value = self._frequenceCounts._readValue(category)
 		
+		# in the main() function of buildHistogram.py, 
 		# each time we achieve a data belongs to particular category, 
 		# add corresponding counter value by one
 		self._frequenceCounts.addkey(category, value + 1)
