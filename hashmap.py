@@ -15,6 +15,7 @@ class HashMap:
 	
 	# this represent a null reference within the table, not occupy by any table entry.
 	UNUSED = None
+	
 	# this create an empty table entry with no key and value, used to compare in the subsquent logic
 	# if we remove a previously existing entry, we can use this dummy EMPTY entry to flag the removed status and distinguish from an really empty (UNUSED) that  never use before.
 	EMPTY = _MapEntry(None, None)
@@ -65,7 +66,37 @@ class HashMap:
 				M = len(self._table)
 				
 				slot = (slot + step_size) % M
+	
+	# when old table exceed a particular load factor (represent by "self._maxCount"),
+	# create a new 2M+1 time larger table, and copy all elements to latter.
+	def _rehash(self):
+		
+		# save old smaller table
+		origTable = self._table
+		
+		# for the sake of decreasing 1st and 2nd clustering, this guarantee to be prime number.
+		newSize = len(self._table) * 2 + 1
+		self._table = Array(newSize)
+		
+		# reset current entry number and re-computer the load factor 
+		self._count = 0
+		self._maxCount = newSize - (newSie // 3)
+		
+		for entry in origTable:
+			
+			# only those un-empty entry need to be copied
+			if entry is not UNUSED and entry is not EMPTY:
 				
+				# finding within the new table for an avaiable slot ( "forInsert" is "True" to indicate an add operation )
+				slot = self._FindSlot(entry.key, True)
+				
+				# the actual table entry copy operation
+				self._table[slot] = entry
+				self._count += 1
+		
+		# maybe we need to free memory occupy by the old table, after we finish duplicating.......
+		free(origTable)
+		
 	
 	def _readValue(self, key):
 		slot = _FindSlot(key, False)
