@@ -1,6 +1,7 @@
 '''
 description
-
+This module primarily responsible for the abstract data type "hashmap" Class (and related operation algorithm), 
+one of the mostly common used hash table implementation.
 '''
 import sys
 
