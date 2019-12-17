@@ -40,3 +40,15 @@ class Histogram:
 		# add corresponding counter value by one
 		self._frequenceCounts.addkey(category, value + 1)
 		
+	def totalCount(self):
+		total = 0
+		for L_category in self._frequenceCounts:
+			total += self._frequenceCounts._readValue(category)
+		return total
+	
+	# returns an iterator for traversing the categories.
+	def __iter__(self):
+		return iter(self._frequenceCounts)
+	
+	
+		
