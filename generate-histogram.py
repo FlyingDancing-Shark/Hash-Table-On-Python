@@ -9,13 +9,13 @@ from histogram import Histogram
 
 def scoreToLetterGrade(score):
 	
-	if grade >= 90 :
+	if score >= 90 :
  		return 'A'
-	elif grade >= 80 :
+	elif score >= 80 :
 		return 'B'
-	elif grade >= 70 :
+	elif score >= 70 :
  		return 'C'
- 	elif grade >= 60 :
+ 	elif score >= 60 :
  		return 'D'
  	else :
  		return 'F'
