@@ -9,45 +9,47 @@ from histogram import Histogram
 
 def scoreToLetterGrade(score):
 	
-	if score <=:
-		return 
-	elif score <=:
-		
-	elif score <=:
-		
-	elif score <=:
+	if grade >= 90 :
+ 		return 'A'
+	elif grade >= 80 :
+		return 'B'
+	elif grade >= 70 :
+ 		return 'C'
+ 	elif grade >= 60 :
+ 		return 'D'
+ 	else :
+ 		return 'F'
 		
 	
-def gen_chart():
+def gen_chart(instanceHist):
 	
-	print(				"distribution")
+	print("			Grade Distribution")
 	
-	grade = ("A", "B", "C", "D", "E", "F")
-	for letter in grade:
-		count = instanceHistogram.getCount(letter)
-		print(letter + )
+	grades = ('A', 'B', 'C', 'D', 'E', 'F')
+	for letter in grades:
+		print("    |")
+		print(letter + " +", end = "")
+		count = instanceHist.getCount(letter)
 		print("*" * count)
 	
-	
-	print(				"+")
-	print(				"------------------")
-	print(				"")
+	print("    |")
+	print( " +-----+-----+-----+-----+-----+-----+-----+-----" )
+	print( " 0     5     10    15    20    25    30    35" )
 
-	
+
 def main():
 	
-	instanceHistogram = Histogram("ABCDEF")
-	dataset = open("score_transcript.txt", r)
+	instanceHistogram = Histogram("ABCDF")
+	dataset = open('score_transcript.txt', "r")
 	
 	for each_line in dataset:
 		
-		letter_grade = scoreToLetterGrade(int(score))
+		letter_grade = scoreToLetterGrade(int(each_line))
 		instanceHistogram.increaseCount(letter_grade)
 	
 	gen_chart(instanceHistogram)	
-	
-  
-main()
 
+
+main()
 
 
