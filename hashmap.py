@@ -147,6 +147,16 @@ class HashMap:
 	def removekey(self, key):
 		
 		if key not in self:
-			
+			return False
+		
+		slot = self._FindSlot(key, True)
+		assert slot is not None, "Invalid key !"
+		
+		# optional  self._table[slot].key = None
+		# 	    self._table[slot].value = None
+		self._table[slot] = EMPTY
+		self._count -= 1
+		return True
+		
 			
 ####################### end of class HashMap definition ##########################
