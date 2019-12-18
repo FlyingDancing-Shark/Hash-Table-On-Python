@@ -143,4 +143,10 @@ class HashMap:
 			# indicates add action successful
 			return True
 	
+	
+	def removekey(self, key):
+		
+		if key not in self:
+			
+			
 ####################### end of class HashMap definition ##########################
