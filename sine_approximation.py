@@ -24,6 +24,7 @@ while counter < max_power :
 print 'sin(%g) = %.32f (approximation with %d terms)' % (x_for_sine, sum, max_power) 
 print 'those terms we used for calculate the approximation of sin(%g) are:\n' \
 	% (x_for_sine) 
-print  term_table
+for term in term_table:
+	print term
 
 
