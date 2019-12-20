@@ -23,6 +23,7 @@ while counter < max_power :
 # this print syntax only legitimate for Python 2.X ,for Python 3.x , using print()	
 print 'sin(%g) = %.32f (approximation with %d terms)' % (x_for_sine, sum, max_power) 
 print 'those terms we used for calculate the approximation of sin(%g) are:\n' \
-	% (x_for_sine) + term_table
-  
+	% (x_for_sine) 
+print  term_table
+
 
