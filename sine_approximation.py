@@ -23,9 +23,9 @@ while counter < max_power :
 exponential_table = [ exp_term*10**6 for exp_term in term_table ]
 	
 # this print syntax only legitimate for Python 2.X ,for Python 3.x , using print()	
-print 'sin(%g) = %.32f (approximation with %d terms)' % (x_for_sine, sum, max_power) 
+print '\n\nsin(%g) = %.32f (approximation with %d terms)' % (x_for_sine, sum, max_power) 
 
-print 'those terms we used for calculate the approximation of sin(%g) are:\n' \
+print '\nthose terms we used for calculate the approximation of sin(%g) are:\n' \
 	% (x_for_sine) 
 
 """
