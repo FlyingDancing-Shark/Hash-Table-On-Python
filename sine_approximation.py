@@ -35,3 +35,6 @@ for term in term_table:
 
 for ori_term, exp_term in zip(term_table, exponential_table): 
 	print '%.16f 	%.16f-----exponentiation by 10^6-----' % (ori_term, exp_term)
+
+	
+	
