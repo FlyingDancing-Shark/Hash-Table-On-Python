@@ -20,11 +20,18 @@ while counter < max_power :
 	sum += trem
 	term_table.append(trem)
 
+exponential_table = [ exp_term*10**6 for exp_term in term_table ]
+	
 # this print syntax only legitimate for Python 2.X ,for Python 3.x , using print()	
 print 'sin(%g) = %.32f (approximation with %d terms)' % (x_for_sine, sum, max_power) 
+
+
+"""
 print 'those terms we used for calculate the approximation of sin(%g) are:\n' \
 	% (x_for_sine) 
 for term in term_table:
 	print term
+"""
 
-
+for ori_term, exp_term in zip(term_table, exponential_table): 
+	print '%.16f 	%.16f-----exponentiation by 10^6-----' % (ori_term, exp_term)
