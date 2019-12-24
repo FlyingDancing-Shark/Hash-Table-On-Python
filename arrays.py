@@ -37,3 +37,20 @@ class Array:
 		return _ArrayIterator(self._elements)
 	
 
+class _ArrayIterator:
+	
+	def __init__(self, theArray):
+		self._arrayReference = theArray
+		self._curNdx = 0
+		
+	def __iter__(self):
+		return self
+	
+	def __next__(self):
+		if self._curNdx < len(self._arrayReference):
+			entry = self._arrayReference[self._curNdx]
+			self._curNdx += 1
+			return entry
+		else:
+			raise StopIteration
+			
