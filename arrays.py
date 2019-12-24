@@ -35,7 +35,8 @@ class Array:
 		
 	def __iter__(self):
 		return _ArrayIterator(self._elements)
-	
+
+#######################################################################################################
 
 class _ArrayIterator:
 	
