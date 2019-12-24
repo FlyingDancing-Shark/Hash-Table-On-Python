@@ -16,11 +16,9 @@ class Array:
 	def __init__(self, size):
 		assert size > 0, "Array size must be larger than 0"
 		self._size = size
-		self._iterationPointer = 0
 		
 		PyArrayType = ctypes.py_object * size
 		self._elements = PyArrayType()
-		
 		self.clear(None)
 		
 	def __len__(self):
@@ -49,15 +47,7 @@ class Array:
 	method.
 	"""
 	
-	def __next__(self):
-		if self._iterationPointer < self._size:
-			entry = self._elements[self._iterationPointer]
-			self._iterationPointer += 1
-			return entry
-		else:
-			raise StopIteration
-			
-		
+				
 class _ArrayIterator:
 	
 	def __init__(self, theArray):
