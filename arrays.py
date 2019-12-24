@@ -36,6 +36,18 @@ class Array:
 	def __iter__(self):
 		return _ArrayIterator(self._elements)
 
+	"""we also need ourself __next__() method within Array class to support it use for 
+	for <some element> in Array instance 
+	syntax, otherwise, we can only use 
+	for i in range(len(Array instance))
+	syntax,
+	so we can deduce that, 
+	for someElement in someObject 
+	syntax internally use that object's 
+	__next__() 
+	method.
+	"""
+	
 
 class _ArrayIterator:
 	
