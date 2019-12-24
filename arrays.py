@@ -54,7 +54,9 @@ class Array:
 			entry = self._elements[self._iterationPointer]
 			self._iterationPointer += 1
 			return entry
-
+		else:
+			raise StopIteration
+			
 		
 class _ArrayIterator:
 	
