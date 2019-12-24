@@ -25,11 +25,11 @@ class Array:
 	def __len__(self):
 		return self._size
 	
-	def __getItem__(self, index):
+	def __getitem__(self, index):
 		assert index >= 0 and index < len(self), "Array subscript out of range"
 		return self._elements[index]
 	
-	def __setItem__(self, index, value):
+	def __setitem__(self, index, value):
 		assert index >= 0 and index < len(self), "Array subscript out of range"
 		self._elements[index] = value
 		
