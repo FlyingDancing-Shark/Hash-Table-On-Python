@@ -8,7 +8,7 @@ from array import Array
 chrCounter = Array(127)
 chrCounter.clear(0)
 
-txtFile = open('my_arrays.txt', 'r')
+txtFile = open('testFile.txt', 'r')
 for line in txtFile:
 	for letter in line:
     	ascii_code = ord(letter)
