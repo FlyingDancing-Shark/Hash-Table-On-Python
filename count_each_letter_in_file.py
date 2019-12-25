@@ -3,7 +3,7 @@
 this program actually count the number of occurrences of each letter in a text file.
 '''
 
-from array import Array
+from my_arrays import Array
 
 chrCounter = Array(127)
 chrCounter.clear(0)
