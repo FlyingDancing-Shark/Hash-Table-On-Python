@@ -19,3 +19,5 @@ txtFile.close()
 for i in range(26):
 	print( "%c - %4d                %c - %4d" % \
 			(chr(65+i), chrCounter[65+i], chr(97+i), chrCounter[97+i]) )
+
+	
