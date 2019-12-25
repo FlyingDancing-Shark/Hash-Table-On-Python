@@ -11,8 +11,8 @@ chrCounter.clear(0)
 txtFile = open('testFile.txt', 'r')
 for line in txtFile:
 	for letter in line:
-    	ascii_code = ord(letter)
-    	chrCounter[ascii_code] += 1
+    		ascii_code = ord(letter)
+    		chrCounter[ascii_code] += 1
 		
 txtFile.close()
 
