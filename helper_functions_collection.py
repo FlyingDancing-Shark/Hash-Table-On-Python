@@ -19,11 +19,14 @@ def dictionary_helper(dict_obj, dict_key, default=0):
 
 value = dictionary_helper(color_dict, 'red')
 
-##############################################################################
+######################## END OF dictionary_helper() definition #########################
 
 def display_words_count(filename, first_n_word):
+    from collections import defaultdict, Counter
+    from pprint import pprint
     word_counts = defaultdict(int)
-    lines = [ line.strip('\n') for line in open(filename, 'r') ]
+    # for Linux system, need to remove an extra'\r' character
+    lines = [ line.strip('\r\n') for line in open(filename, 'r') ]
     for line in lines:
         for word in line.split(' '):
             word_counts[word.lower()] += 1
@@ -31,5 +34,5 @@ def display_words_count(filename, first_n_word):
     if '' in words_freq.most_common(first_n_word)[0]:
         pprint(words_freq.most_common(first_n_word)[1:])
         
-####################################################################################### 
+######################## END OF display_words_count() definition ######################### 
 
