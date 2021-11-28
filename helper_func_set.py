@@ -38,7 +38,9 @@ def display_words_count(filename, first_n_word):
 
 
 def close_kitchen_if_past_cutoff_time(point_in_time):
- if point_in_time >= closing_time():
- close_kitchen()
- log_time_closed(point_in_time)
+    if point_in_time >= closing_time():
+        close_kitchen()
+        log_time_closed(point_in_time)
 
+    
+    
