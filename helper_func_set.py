@@ -42,5 +42,15 @@ def close_kitchen_if_past_cutoff_time(point_in_time: datetime.datetime):
         close_kitchen()
         log_time_closed(point_in_time)
 
-    
+        
+        
+from collections import defaultdict 
+def create_author_count_mapping(cookbooks: List[Cookbook]): 
+    counter = defaultdict(lambda: 0) 
+    for cookbook in cookbooks: 
+ 	    counter[cookbook.author] += 1 
+    return counter
+
+
+
     
