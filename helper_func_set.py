@@ -37,4 +37,7 @@ def display_words_count(filename, first_n_word):
 ######################## END OF display_words_count() definition ######################### 
 
 
+import datetime
+datetime.datetime.now()
+datetime.datetime(2020, 9, 8, 22, 19, 28, 838667)
 
