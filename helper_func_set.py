@@ -50,5 +50,10 @@ def create_author_count_mapping(cookbooks: List[Cookbook]):
     return Counter(book.author for book in cookbooks)
 
 
+from typing import Iterable
+def print_items(items: Iterable):
+    for item in items:
+        print(item)
+
 
     
