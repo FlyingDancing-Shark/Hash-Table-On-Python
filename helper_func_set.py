@@ -60,6 +60,10 @@ def find_workers_available_for_time(open_time: datetime.datetime) -> list[str]:
     return [OWNER]
 
 
+from typing import Dict,List
+AuthorToCountMapping = Dict[str, int]
+def count_authors( cookbooks: List[Cookbook] ) -> AuthorToCountMapping:
+
     
 from collections import Counter
 
