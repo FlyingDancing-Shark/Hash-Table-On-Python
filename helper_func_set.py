@@ -46,6 +46,9 @@ def close_kitchen_if_past_close(point_in_time: datetime.datetime):
 close_kitchen_if_past_close(CustomDateTime("now"))            
 
 
+def schedule_restaurant_open(open_time, workers_needed):
+    
+    
 
 from collections import Counter
 
