@@ -86,5 +86,11 @@ number: int = 0
 text: str = "useless"
 values: list[float] = [1.2, 3.4, 6.0]
 worker: Worker = Worker()
+
+    
+ratio = get_ratio(5,3) # type: float
+def get_workers(open): # type: (datetime.datetime) -> List[str]
+
+    
     
     
