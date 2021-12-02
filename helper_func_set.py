@@ -92,5 +92,8 @@ ratio = get_ratio(5,3) # type: float
 def get_workers(open): # type: (datetime.datetime) -> List[str]
 
     
-    
+   
+def read_file_and_reverse_it(filename: str) -> str:
+    with open(filename) as f:
+        return f.read().encode("utf-8")[::-1]    
     
