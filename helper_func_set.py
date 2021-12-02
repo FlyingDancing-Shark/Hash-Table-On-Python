@@ -45,14 +45,21 @@ def schedule_restaurant_open(open_time: datetime.datetime, workers_needed: int):
         worker.schedule(open_time)        
 
 
-
-    
 def find_workers_available_for_time(open_time: datetime.datetime):
+    workers = worker_database.get_all_workers()
+    available_workers = [worker for worker in workers if is_available(worker)]
+    if available_workers:
+        return available_workers
     
+    emergency_workers = [worker for worker in get_emergency_workers() 
+                                               if is_available(worker)]
     
+    if emergency_workers:
+        return emergency_workers
+    
+    return [OWNER]
 
-    
-    
+
     
 from collections import Counter
 
