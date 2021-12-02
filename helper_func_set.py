@@ -37,13 +37,12 @@ def display_words_count(filename, first_n_word):
 ######################## END OF display_words_count() definition ######################### 
 
 
-def close_kitchen_if_past_close(point_in_time: datetime.datetime):
-    if point_in_time >= closing_time():
-        close_kitchen()
-        log_time_closed(point_in_time)
-
-        
-close_kitchen_if_past_close(CustomDateTime("now"))            
+import datetime
+import random
+def schedule_restaurant_open(open_time: datetime.datetime, workers_needed: int):
+    workers = find_workers_available_for_time(open_time)
+    for worker in random.sample(workers, workers_needed):
+        worker.schedule(open_time)        
 
 
 def schedule_restaurant_open(open_time, workers_needed):
