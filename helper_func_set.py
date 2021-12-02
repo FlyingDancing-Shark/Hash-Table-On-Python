@@ -95,6 +95,7 @@ def get_workers(open): # type: (datetime.datetime) -> List[str]
    
 def add_doubled_values(my_list: list[int]):
     my_list.update([x*2 for x in my_list])
-    add_doubled_values([1,2,3])
+    
+add_doubled_values([1,2,3])
  
     
