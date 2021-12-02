@@ -93,7 +93,8 @@ def get_workers(open): # type: (datetime.datetime) -> List[str]
 
     
    
-def read_file_and_reverse_it(filename: str) -> str:
-    with open(filename) as f:
-        return f.read().encode("utf-8")[::-1]    
+def add_doubled_values(my_list: list[int]):
+    my_list.update([x*2 for x in my_list])
+    add_doubled_values([1,2,3])
+ 
     
