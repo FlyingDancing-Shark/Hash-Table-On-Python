@@ -45,10 +45,15 @@ def schedule_restaurant_open(open_time: datetime.datetime, workers_needed: int):
         worker.schedule(open_time)        
 
 
-def schedule_restaurant_open(open_time, workers_needed):
+
+    
+def find_workers_available_for_time(open_time: datetime.datetime):
     
     
 
+    
+    
+    
 from collections import Counter
 
 def create_author_count_mapping(cookbooks: List[Cookbook]): 
