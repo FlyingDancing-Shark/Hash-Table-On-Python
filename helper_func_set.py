@@ -88,14 +88,19 @@ values: list[float] = [1.2, 3.4, 6.0]
 worker: Worker = Worker()
 
     
-ratio = get_ratio(5,3) # type: float
-def get_workers(open): # type: (datetime.datetime) -> List[str]
+def get_restaurant_name(city: str) -> str:
+    if city in ITALY_CITIES:
+        return "Trattoria Viafore"
+    if city in GERMANY_CITIES:
+        return "Pat's Kantine"
+    if city in US_CITIES:
+        return "Pat's Place"
+    return None
+
+
+if get_restaurant_name('Boston'):
+ print("Location Found")
 
     
-   
-def add_doubled_values(my_list: list[int]):
-    my_list.update([x*2 for x in my_list])
-    
-add_doubled_values([1,2,3])
- 
+
     
