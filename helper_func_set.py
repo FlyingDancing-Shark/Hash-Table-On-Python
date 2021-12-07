@@ -88,18 +88,15 @@ values: list[float] = [1.2, 3.4, 6.0]
 worker: Worker = Worker()
 
     
-def get_restaurant_name(city: str) -> str:
-    if city in ITALY_CITIES:
-        return "Trattoria Viafore"
-    if city in GERMANY_CITIES:
-        return "Pat's Kantine"
-    if city in US_CITIES:
-        return "Pat's Place"
-    return None
+def create_hot_dog():
+    bun = dispense_bun()
+    frank = dispense_frank()
+    hot_dog = bun.add_frank(frank)
+    ketchup = dispense_ketchup()
+    mustard = dispense_mustard()
+    hot_dog.add_condiments(ketchup, mustard)
+    dispense_hot_dog_to_customer(hot_dog)
 
-
-if get_restaurant_name('Boston'):
- print("Location Found")
 
     
 
