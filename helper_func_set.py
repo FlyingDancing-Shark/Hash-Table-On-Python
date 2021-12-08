@@ -88,25 +88,16 @@ values: list[float] = [1.2, 3.4, 6.0]
 worker: Worker = Worker()
 
     
-from typing import Optional
-maybe_a_string: Optional[str] = "abcdef" # This has a value
-maybe_a_string: Optional[str] = None # This is the absence of a value
+
 
     
 
-
-def create_hot_dog():
-    bun = dispense_bun()
-    if bun is None:
-        print_error_code("Bun could not be dispensed")
-        return
-    
-    frank = dispense_frank()
-    hot_dog = bun.add_frank(frank)
-    ketchup = dispense_ketchup()
-    mustard = dispense_mustard()
-    hot_dog.add_condiments(ketchup, mustard)
-    dispense_hot_dog_to_customer(hot_dog)
+def dispense_snack() -> HotDog:
+    if not are_ingredients_available():
+        raise RuntimeError("Not all ingredients available")
+    if order_interrupted():
+        raise RuntimeError("Order interrupted")
+    return create_hot_dog()
     
     
     
