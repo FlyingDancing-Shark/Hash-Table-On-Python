@@ -93,6 +93,14 @@ maybe_a_string: Optional[str] = "abcdef" # This has a value
 maybe_a_string: Optional[str] = None # This is the absence of a value
 
     
-def dispense_bun() -> Optional[Bun]:
 
+
+def dispense_bun() -> Bun:
+    return Bun('Wheat')
     
+
+def dispense_bun() -> Bun:
+    if not are_buns_available():
+        return None
+    return Bun('Wheat')    
+
