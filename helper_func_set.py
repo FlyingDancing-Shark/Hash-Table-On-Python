@@ -95,12 +95,21 @@ maybe_a_string: Optional[str] = None # This is the absence of a value
     
 
 
-def dispense_bun() -> Bun:
-    return Bun('Wheat')
+def create_hot_dog():
+    bun = dispense_bun()
+    if bun is None:
+        print_error_code("Bun could not be dispensed")
+        return
     
-
-def dispense_bun() -> Bun:
-    if not are_buns_available():
-        return None
-    return Bun('Wheat')    
+    frank = dispense_frank()
+    hot_dog = bun.add_frank(frank)
+    ketchup = dispense_ketchup()
+    mustard = dispense_mustard()
+    hot_dog.add_condiments(ketchup, mustard)
+    dispense_hot_dog_to_customer(hot_dog)
+    
+    
+    
+    
+    
 
