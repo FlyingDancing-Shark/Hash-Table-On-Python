@@ -99,15 +99,14 @@ def dispense_snack(user_input: str) -> Union[HotDog, Pretzel]:
                        "as an invalid input has been entered")
     
     
-    
-from typing import Union
-def place_order() -> Optional[HotDog]:
-    order = get_order()
-    result = dispense_snack(order.name)
-    if result is None
-        print_error_code("An error occurred" + result)
-        return None
-    # Return our HotDog
-    return result    
-    
+from dataclasses import dataclass
+
+@dataclass
+class Snack:
+    name: str
+    condiments: set[str]
+    error_code: int
+    disposed_of: bool
+        
+Snack("Hotdog", {"Mustard", "Ketchup"}, 5, False)
 
