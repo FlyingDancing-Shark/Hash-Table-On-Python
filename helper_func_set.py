@@ -113,5 +113,21 @@ Snack("Hotdog", {"Mustard", "Ketchup"}, 5, False)
 def serve(snack):
     if snack.disposed_of:
         return
+    
+    
+from dataclasses import dataclass
+from typing import Union
+@dataclass
+class Error:
+    error_code: int
+    disposed_of: bool
+@dataclass
+class Snack:
+    name: str
+    condiments: set[str]
+    snack: Union[Snack, Error] = Snack("Hotdog", {"Mustard", "Ketchup"})
+        
+        
+snack = Error(5, True)
 
 
