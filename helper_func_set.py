@@ -110,3 +110,8 @@ class Snack:
         
 Snack("Hotdog", {"Mustard", "Ketchup"}, 5, False)
 
+def serve(snack):
+    if snack.disposed_of:
+        return
+
+
